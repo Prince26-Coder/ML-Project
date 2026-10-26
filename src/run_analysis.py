@@ -15,7 +15,7 @@ import sklearn
 from sklearn.cluster import KMeans, AgglomerativeClustering
 from sklearn.metrics import silhouette_score
 from sklearn.linear_model import LinearRegression
-from scipy.spatial.distance import cdist
+from sklearn.metrics.pairwise import haversine_distances
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
@@ -129,8 +129,8 @@ def cluster_catalog(df: pd.DataFrame, k: int, hierarchical_max: int = 2500):
     else:
         sample_idx = np.arange(len(df))
     sample_rad = coords_rad[sample_idx]
-    # scipy cdist's haversine metric returns angular distance in radians.
-    distance_matrix = cdist(sample_rad, sample_rad, metric="haversine")
+    # sklearn haversine_distances returns angular distance in radians.
+    distance_matrix = haversine_distances(sample_rad, sample_rad)
     try:
         hier = AgglomerativeClustering(
             n_clusters=k, metric="precomputed", linkage="average"
