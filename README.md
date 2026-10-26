@@ -6,7 +6,7 @@
 **Domain:** Disaster Management  
 **Methods:** K-means, hierarchical clustering with haversine distance, Gutenberg–Richter magnitude-frequency regression
 
-> T> This repository is designed around the assigned problem in the provided project-allocation workbook. It does not copy the results in the sample AQI paper.
+> This repository is designed around the assigned problem in the provided project-allocation workbook. It does not copy the results in the sample AQI paper.
 >
 > The analysis has been executed on the selected earthquake catalogue. Numerical results are recorded in the generated output files in `results/`. The report discusses these outputs and their limitations.
 
@@ -68,6 +68,34 @@ The Gutenberg–Richter relation is commonly written as:
 `log10(N(M >= m)) = a - b*m`
 
 where `N` is the number of earthquakes at or above magnitude `m`, `a` is an intercept and `b` is the slope magnitude. The script fits a simple linear regression to the empirical cumulative magnitude-frequency curve for a documented magnitude range. The fit depends on catalogue completeness and the selected time period; R² should not be interpreted as proof of forecasting skill.
+
+## Results
+
+The analysis was performed on 6,009 earthquake records from the selected catalogue - National Center for Seismology , covering **21 February 2016 to 31 December 2024 (UTC)**. The geographic filters were latitude 25°–38° N and longitude 70°–100° E. All 6,009 input records remained after the geographic filtering and cleaning process. Depth values were missing in approximately 0.23% of records.
+
+### Clustering evaluation
+
+The analysis requested four clusters for both K-means and hierarchical clustering.
+
+- **K-means Silhouette score:** 0.3881
+- **Hierarchical clustering Silhouette score:** 0.3768, evaluated on a sample of 2,500 records.
+
+The scores use different distance definitions, so they should not be treated as a direct, like-for-like comparison.
+
+### Gutenberg–Richter regression
+
+The fitted magnitude-frequency relationship was:
+
+`log10(N(M >= m)) = 6.3024 − 0.8253m`
+
+- **b-value:** 0.8253
+- **R²:** 0.9505
+- **Magnitude threshold range:** 2.5–6.5
+- **Magnitude step:** 0.25
+
+The high R² indicates that the fitted line describes the selected empirical magnitude-frequency data reasonably well over the chosen thresholds. It does not demonstrate that earthquakes can be predicted.
+
+Detailed numerical outputs are available in `results/analysis_summary.json`, `results/cluster_metrics.csv` and `results/gutenberg_richter_summary.json`.
 
 ## Important limitations
 
