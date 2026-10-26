@@ -1,0 +1,13 @@
+{
+  "equation": "log10(N(M >= m)) = a - b*m",
+  "intercept_a": 6.3024443420157965,
+  "slope": -0.8252678554680654,
+  "b_value_as_negative_slope": 0.8252678554680654,
+  "r2": 0.9504597865353899,
+  "magnitude_threshold_min": 2.5,
+  "magnitude_threshold_max": 6.5,
+  "magnitude_step": 0.25,
+  "thresholds_used": 17,
+  "catalogue_events": 6009,
+  "note": "Exploratory fit; interpretation depends on catalogue completeness and selected magnitude range."
+}

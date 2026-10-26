@@ -1,0 +1,3 @@
+method,clusters,silhouette_score,silhouette_distance,evaluated_samples
+"K-means (standardised latitude, longitude, depth, magnitude)",4,0.38806277205388545,Euclidean on standardised features,6009
+"Agglomerative (average linkage, haversine epicentre distance)",4,0.37682760964658185,Haversine on latitude/longitude,2500

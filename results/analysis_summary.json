@@ -1,0 +1,38 @@
+{
+  "input_file": "C:\\Users\\monika\\Downloads\\prince_himalayan_earthquake_ml_ready\\prince_himalayan_earthquake_ml\\data\\earthquakes.csv",
+  "input_rows": 6009,
+  "cleaned_rows_in_bounds": 6009,
+  "date_start_utc": "2016-02-21 00:13:42+00:00",
+  "date_end_utc": "2024-12-31 09:57:19+00:00",
+  "bounds_lat_lon": {
+    "min_lat": 25,
+    "max_lat": 38,
+    "min_lon": 70,
+    "max_lon": 100
+  },
+  "depth_missing_percent": 0.2329838575470128,
+  "student": "Prince",
+  "roll_number": "24020570051",
+  "assigned_problem_number": 59,
+  "clusters_requested": 4,
+  "hierarchical_evaluated_samples": 2500,
+  "python_version": "3.13.16",
+  "pandas_version": "3.1.0",
+  "numpy_version": "2.5.4",
+  "scikit_learn_version": "1.9.1",
+  "scipy_version": "1.18.1",
+  "gutenberg_richter": {
+    "equation": "log10(N(M >= m)) = a - b*m",
+    "intercept_a": 6.3024443420157965,
+    "slope": -0.8252678554680654,
+    "b_value_as_negative_slope": 0.8252678554680654,
+    "r2": 0.9504597865353899,
+    "magnitude_threshold_min": 2.5,
+    "magnitude_threshold_max": 6.5,
+    "magnitude_step": 0.25,
+    "thresholds_used": 17,
+    "catalogue_events": 6009,
+    "note": "Exploratory fit; interpretation depends on catalogue completeness and selected magnitude range."
+  },
+  "interpretation_warning": "Exploratory regional analysis only; this model does not predict earthquakes or define official hazard zones."
+}
