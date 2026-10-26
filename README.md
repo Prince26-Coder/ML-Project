@@ -6,7 +6,9 @@
 **Domain:** Disaster Management  
 **Methods:** K-means, hierarchical clustering with haversine distance, Gutenberg–Richter magnitude-frequency regression
 
-> This repository is designed around the assigned problem in the provided project-allocation workbook. It does not copy the results in the sample AQI paper.The analysis has been executed on the selected earthquake catalogue. Numerical results are recorded in the generated output files in results/. The report discusses these outputs and their limitations.
+> T> This repository is designed around the assigned problem in the provided project-allocation workbook. It does not copy the results in the sample AQI paper.
+>
+> The analysis has been executed on the selected earthquake catalogue. Numerical results are recorded in the generated output files in `results/`. The report discusses these outputs and their limitations.
 
 ## Research objectives
 
@@ -77,13 +79,19 @@ where `N` is the number of earthquakes at or above magnitude `m`, `a` is an inte
 ## Repository structure
 
 ```text
-prince_himalayan_earthquake_ml/
+ML-Project/
 ├── data/
-│   └── .gitkeep
+│   └── earthquakes.csv
 ├── report/
 │   └── journal_report_template.md
 ├── results/
-│   └── .gitkeep
+│   ├── earthquake_clusters.png
+│   ├── magnitude_distribution.png
+│   ├── gutenberg_richter_curve.png
+│   ├── cluster_metrics.csv
+│   ├── gutenberg_richter_summary.json
+│   ├── analysis_summary.json
+│   └── cleaned_earthquakes.csv
 ├── src/
 │   └── run_analysis.py
 ├── requirements.txt
